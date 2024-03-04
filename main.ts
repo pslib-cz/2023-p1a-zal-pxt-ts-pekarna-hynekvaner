@@ -22,8 +22,13 @@ let data: Array<Odber> = [
     { cas: 800, spotreba: 1500 },
 ]
 
+let sumaSpotreby:number=0
+
 for (const peceme of data){
-    console.logValue("čas: ", peceme.cas);
-    console.logValue("spotřeba: ", peceme.spotreba);
-    console.logValue("spotřebováno: ", peceme.spotreba / 3600 * peceme.cas);
+    console.log("čas: ", peceme.cas);
+    console.log("spotřeba: ", peceme.spotreba);
+    sumaSpotreby+=peceme.spotreba
+    console.log("spotřebováno: ", (peceme.spotreba / 3600) * peceme.cas);
+    console.log("cena: ", (peceme.spotreba / 3600) * peceme.cas * cena, "Kč");
 }
+console.log("ptůměrná spotřeba: ", sumaSpotreby/data.length, "kWh");
